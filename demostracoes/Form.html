@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração de Formulários BEM</title>
+
+    <!-- CSS do componente -->
+    <link rel="stylesheet" href="../styles/Form.css">
+
+    <!-- Estilos exclusivos da página de demonstração -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .demo-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .demo-title {
+            margin-bottom: 8px;
+            font-size: 28px;
+        }
+
+        .demo-description {
+            margin-bottom: 36px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .demo-section {
+            margin-bottom: 32px;
+            padding: 24px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+        }
+
+        .demo-section h2 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .demo-section > p {
+            margin-bottom: 24px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .demo-form {
+            max-width: 600px;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0 20px;
+        }
+
+        .demo-card {
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .demo-card h3 {
+            margin-top: 0;
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+
+        .demo-range-value {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .demo-form-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .demo-form-actions button {
+            padding: 11px 18px;
+            border: none;
+            border-radius: 6px;
+            background-color: #0d9488;
+            color: #ffffff;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .demo-form-actions button[type="reset"] {
+            background-color: #e2e8f0;
+            color: #334155;
+        }
+
+        .demo-hint {
+            margin-top: -8px;
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 20px;
+            }
+
+            .demo-section {
+                padding: 18px;
+            }
+
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="demo-container">
+
+        <h1 class="demo-title">Demonstração de Formulários</h1>
+
+        <p class="demo-description">
+            Exemplos de utilização dos campos de formulário da aplicação,
+            demonstrando inputs, labels, selects e controles de faixa
+            de valores em diferentes contextos.
+        </p>
+
+        <!-- Seção 1: Input de texto -->
+        <section class="demo-section">
+            <h2>1. Campos de texto</h2>
+
+            <p>
+                Campos utilizados para receber informações digitadas
+                pelo usuário.
+            </p>
+
+            <form class="demo-form">
+
+                <div class="form-group">
+                    <label class="form-label" for="name">
+                        Nome completo
+                    </label>
+
+                    <input
+                        class="form-input"
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Digite seu nome completo"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        class="form-input"
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="exemplo@email.com"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="phone">
+                        Telefone
+                    </label>
+
+                    <input
+                        class="form-input"
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="(11) 99999-9999"
+                    >
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Seção 2: Select -->
+        <section class="demo-section">
+            <h2>2. Campos de seleção</h2>
+
+            <p>
+                Seletores utilizados quando o usuário precisa escolher
+                uma opção entre valores previamente definidos.
+            </p>
+
+            <form class="demo-form">
+
+                <div class="form-group">
+                    <label class="form-label" for="destination">
+                        Destino
+                    </label>
+
+                    <select
+                        class="form-select"
+                        id="destination"
+                        name="destination"
+                    >
+                        <option value="">
+                            Selecione um destino
+                        </option>
+
+                        <option value="rio">
+                            Rio de Janeiro
+                        </option>
+
+                        <option value="paris">
+                            Paris
+                        </option>
+
+                        <option value="new-york">
+                            Nova York
+                        </option>
+
+                        <option value="tokyo">
+                            Tóquio
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="passengers">
+                        Quantidade de passageiros
+                    </label>
+
+                    <select
+                        class="form-select"
+                        id="passengers"
+                        name="passengers"
+                    >
+                        <option value="1">1 passageiro</option>
+                        <option value="2">2 passageiros</option>
+                        <option value="3">3 passageiros</option>
+                        <option value="4">4 passageiros</option>
+                    </select>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Seção 3: Formulário de cadastro -->
+        <section class="demo-section">
+            <h2>3. Formulário de cadastro de passageiro</h2>
+
+            <p>
+                Exemplo de combinação entre campos de texto e seletores
+                em um formulário de dados pessoais.
+            </p>
+
+            <form class="demo-form">
+
+                <div class="demo-grid">
+
+                    <div class="form-group">
+                        <label class="form-label" for="full-name">
+                            Nome completo
+                        </label>
+
+                        <input
+                            class="form-input"
+                            type="text"
+                            id="full-name"
+                            name="full-name"
+                            placeholder="Seu nome"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="birth-date">
+                            Data de nascimento
+                        </label>
+
+                        <input
+                            class="form-input"
+                            type="date"
+                            id="birth-date"
+                            name="birth-date"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="document">
+                            CPF
+                        </label>
+
+                        <input
+                            class="form-input"
+                            type="text"
+                            id="document"
+                            name="document"
+                            placeholder="000.000.000-00"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="nationality">
+                            Nacionalidade
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="nationality"
+                            name="nationality"
+                        >
+                            <option value="br">Brasileira</option>
+                            <option value="us">Americana</option>
+                            <option value="pt">Portuguesa</option>
+                        </select>
+                    </div>
+
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Seção 4: Formulário de pagamento -->
+        <section class="demo-section">
+            <h2>4. Formulário de pagamento</h2>
+
+            <p>
+                Exemplo de utilização dos campos em uma tela de pagamento
+                de uma reserva de viagem.
+            </p>
+
+            <form class="demo-form">
+
+                <div class="form-group">
+                    <label class="form-label" for="card-name">
+                        Nome impresso no cartão
+                    </label>
+
+                    <input
+                        class="form-input"
+                        type="text"
+                        id="card-name"
+                        name="card-name"
+                        placeholder="Nome do titular"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="card-number">
+                        Número do cartão
+                    </label>
+
+                    <input
+                        class="form-input"
+                        type="text"
+                        id="card-number"
+                        name="card-number"
+                        placeholder="0000 0000 0000 0000"
+                    >
+                </div>
+
+                <div class="demo-grid">
+
+                    <div class="form-group">
+                        <label class="form-label" for="expiration">
+                            Validade
+                        </label>
+
+                        <input
+                            class="form-input"
+                            type="text"
+                            id="expiration"
+                            name="expiration"
+                            placeholder="MM/AA"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="installments">
+                            Parcelas
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="installments"
+                            name="installments"
+                        >
+                            <option value="1">1x</option>
+                            <option value="2">2x</option>
+                            <option value="3">3x</option>
+                            <option value="6">6x</option>
+                            <option value="12">12x</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <p class="demo-hint">
+                    Demonstração visual. Não insira dados reais de cartão.
+                </p>
+
+            </form>
+        </section>
+
+        <!-- Seção 5: Range -->
+        <section class="demo-section">
+            <h2>5. Controle de faixa de preço</h2>
+
+            <p>
+                Slider utilizado para selecionar um intervalo ou limite
+                de preço durante a filtragem de viagens.
+            </p>
+
+            <div class="demo-card">
+
+                <div class="form-group">
+                    <label class="form-label" for="price-range">
+                        Preço máximo da viagem
+                    </label>
+
+                    <input
+                        class="form-range"
+                        type="range"
+                        id="price-range"
+                        name="price-range"
+                        min="500"
+                        max="10000"
+                        step="100"
+                        value="5000"
+                    >
+
+                    <div class="demo-range-value">
+                        <span>R$ 500</span>
+                        <strong id="price-value">R$ 5.000</strong>
+                        <span>R$ 10.000</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Seção 6: Formulário completo -->
+        <section class="demo-section">
+            <h2>6. Formulário completo de busca</h2>
+
+            <p>
+                Exemplo combinando diferentes tipos de campos em uma
+                pesquisa de viagens.
+            </p>
+
+            <form class="demo-form" action="#" method="get">
+
+                <div class="form-group">
+                    <label class="form-label" for="search-destination">
+                        Destino desejado
+                    </label>
+
+                    <select
+                        class="form-select"
+                        id="search-destination"
+                        name="destination"
+                    >
+                        <option value="">Escolha seu destino</option>
+                        <option value="rio">Rio de Janeiro</option>
+                        <option value="paris">Paris</option>
+                        <option value="tokyo">Tóquio</option>
+                    </select>
+                </div>
+
+                <div class="demo-grid">
+
+                    <div class="form-group">
+                        <label class="form-label" for="departure">
+                            Data de ida
+                        </label>
+
+                        <input
+                            class="form-input"
+                            type="date"
+                            id="departure"
+                            name="departure"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="return">
+                            Data de volta
+                        </label>
+
+                        <input
+                            class="form-input"
+                            type="date"
+                            id="return"
+                            name="return"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="budget">
+                        Orçamento máximo
+                    </label>
+
+                    <input
+                        class="form-range"
+                        type="range"
+                        id="budget"
+                        name="budget"
+                        min="500"
+                        max="10000"
+                        step="100"
+                        value="3000"
+                    >
+                </div>
+
+                <div class="demo-form-actions">
+                    <button type="submit">
+                        Buscar viagens
+                    </button>
+
+                    <button type="reset">
+                        Limpar filtros
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Script exclusivo da demonstração para atualizar o valor do slider -->
+    <script>
+        const priceRange = document.getElementById("price-range");
+        const priceValue = document.getElementById("price-value");
+
+        priceRange.addEventListener("input", () => {
+            const value = Number(priceRange.value);
+
+            priceValue.textContent = value.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+                maximumFractionDigits: 0
+            });
+        });
+    </script>
+</body>
+</html>

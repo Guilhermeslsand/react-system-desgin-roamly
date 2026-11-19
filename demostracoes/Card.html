@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demonstração de Cards BEM</title>
+  <stylesheet> <link rel="stylesheet" href="../styles/Card.css"></stylesheet>
+  <style>
+    :root {
+      --color-surface: #ffffff;
+      --color-border: #e5e7eb;
+      --color-text-main: #1f2937;
+      --color-text-light: #6b7280;
+      --color-primary: #0d9488;
+      --radius-md: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      color: var(--color-text-main);
+    }
+
+    h1 {
+      margin-bottom: 8px;
+    }
+
+    .page-description {
+      color: var(--color-text-light);
+      margin-bottom: 35px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Demonstração de Cards</h1>
+  <p class="page-description">
+    Exemplos de reutilização do componente Card utilizando BEM.
+  </p>
+
+  <!-- 1. CARD PADRÃO -->
+  <section class="section">
+    <h2>1. Card padrão</h2>
+
+    <div class="card-grid">
+      <article class="card">
+        <div class="card__content">
+          <h3 class="card__title">Card básico</h3>
+          <p class="card__label">
+            Estrutura visual padrão, sem modificadores.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 2. CARD INTERATIVO -->
+  <section class="section">
+    <h2>2. Card interativo</h2>
+
+    <div class="card-grid">
+      <article class="card card--interactive">
+        <div class="card__content">
+          <h3 class="card__title">Card clicável</h3>
+          <p class="card__label">
+            Passe o mouse para visualizar o efeito hover.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 3. CARD DE DESTINO -->
+  <section class="section">
+    <h2>3. Cards de destinos</h2>
+
+    <div class="card-grid">
+
+      <article class="card card--destination card--interactive">
+        <div class="card__image-wrapper">
+          <span class="card__badge">Mais vendido</span>
+          <img
+            class="card__image"
+            src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600"
+            alt="Costa italiana"
+          />
+        </div>
+
+        <div class="card__content">
+          <h3 class="card__title">Cinque Terre</h3>
+
+          <div class="card__footer">
+            <span class="card__label">Itália</span>
+            <strong class="card__price-value">R$ 2.500</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--destination card--interactive">
+        <div class="card__image-wrapper">
+          <span class="card__badge">Oferta especial</span>
+          <img
+            class="card__image"
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600"
+            alt="Paisagem de montanhas"
+          />
+        </div>
+
+        <div class="card__content">
+          <h3 class="card__title">Montanhas</h3>
+
+          <div class="card__footer">
+            <span class="card__label">Suíça</span>
+            <strong class="card__price-value">R$ 3.800</strong>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 4. CARD DE HOTEL -->
+  <section class="section">
+    <h2>4. Card de hotel</h2>
+
+    <div class="card-grid">
+
+      <article class="card card--interactive">
+        <div class="card__image-wrapper">
+          <img
+            class="card__image"
+            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600"
+            alt="Hotel com piscina"
+          />
+          <span class="card__badge">Recomendado</span>
+        </div>
+
+        <div class="card__content">
+          <div class="card__header">
+            <h3 class="card__title">Hotel Paradise</h3>
+            <span class="card__rating">★ 4.9</span>
+          </div>
+
+          <p class="card__label">Rio de Janeiro, Brasil</p>
+
+          <hr class="card__divider" />
+
+          <div class="card__footer">
+            <span class="card__label">Por diária</span>
+            <strong class="card__price-value">R$ 450</strong>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 5. CARD DE VOO -->
+  <section class="section">
+    <h2>5. Card de voo</h2>
+
+    <div class="card-grid">
+
+      <article class="card card--interactive">
+        <div class="card__content">
+
+          <div class="card__header">
+            <h3 class="card__title">São Paulo → Salvador</h3>
+            <span class="card__badge">Direto</span>
+          </div>
+
+          <div class="card__flight-info">
+            <div>
+              <strong>08:30</strong>
+              <p class="card__label">GRU</p>
+            </div>
+
+            <span class="card__label">2h 15min →</span>
+
+            <div>
+              <strong>10:45</strong>
+              <p class="card__label">SSA</p>
+            </div>
+          </div>
+
+          <hr class="card__divider" />
+
+          <div class="card__footer">
+            <span class="card__label">A partir de</span>
+            <strong class="card__price-value">R$ 620</strong>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 6. CARD COM COMBINAÇÃO DE MODIFIERS -->
+  <section class="section">
+    <h2>6. Combinando modificadores</h2>
+
+    <div class="card-grid">
+
+      <article class="card card--destination card--interactive">
+        <div class="card__image-wrapper">
+          <img
+            class="card__image"
+            src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=600"
+            alt="Ilha grega"
+          />
+          <span class="card__badge">Destaque</span>
+        </div>
+
+        <div class="card__content">
+          <h3 class="card__title">Ilhas Gregas</h3>
+
+          <div class="card__footer">
+            <span class="card__label">Grécia</span>
+            <strong class="card__price-value">R$ 4.200</strong>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+</body>
+</html>

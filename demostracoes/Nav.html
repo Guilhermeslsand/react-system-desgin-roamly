@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração - Navigation</title>
+
+    <!-- CSS do componente -->
+    <link rel="stylesheet" href="../styles/Nav.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background: #f1f5f9;
+            color: #1e293b;
+            font-family: Arial, sans-serif;
+        }
+
+        .demo-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .demo-title {
+            margin-bottom: 8px;
+            font-size: 28px;
+        }
+
+        .demo-description {
+            margin-bottom: 36px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .demo-section {
+            margin-bottom: 32px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+        .demo-section__info {
+            padding: 20px;
+        }
+
+        .demo-section__info h2 {
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+
+        .demo-section__info p {
+            margin: 0;
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .demo-preview {
+            display: flex;
+            min-height: 260px;
+            align-items: flex-start;
+            padding: 24px;
+            border-top: 1px solid #e2e8f0;
+            background: #f8fafc;
+        }
+
+        /* Estilos exclusivos da demonstração */
+        .demo-sidebar {
+            width: 260px;
+            min-height: 320px;
+            padding: 24px 16px;
+            border-radius: 10px;
+            background: #0f172a;
+        }
+
+        .demo-sidebar .nav {
+            width: 100%;
+        }
+
+        .demo-sidebar .nav__section {
+            margin-bottom: 28px;
+        }
+
+        .demo-sidebar .nav__section:last-child {
+            margin-bottom: 0;
+        }
+
+        .demo-sidebar .nav__list {
+            margin: 0;
+            padding: 0;
+        }
+
+        .demo-sidebar .nav__link {
+            font-size: 14px;
+        }
+
+        .demo-icon {
+            width: 20px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .demo-content {
+            flex: 1;
+            padding: 24px;
+        }
+
+        .demo-content h3 {
+            margin-top: 0;
+        }
+
+        .demo-content p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .demo-horizontal {
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+            background: #0f172a;
+        }
+
+        .demo-horizontal .nav__list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .demo-horizontal .nav__link {
+            font-size: 14px;
+        }
+
+        .demo-hover-hint {
+            margin-top: 16px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 24px 12px;
+            }
+
+            .demo-preview {
+                padding: 16px;
+            }
+
+            .demo-sidebar {
+                width: 100%;
+            }
+
+            .demo-horizontal .nav__list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="demo-container">
+
+        <h1 class="demo-title">Componente Navigation</h1>
+
+        <p class="demo-description">
+            Demonstração do menu de navegação, responsável por agrupar
+            links e organizar o acesso às diferentes áreas da plataforma.
+        </p>
+
+        <!-- Exemplo 1: Menu lateral completo -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>1. Menu lateral completo</h2>
+                <p>
+                    Navegação organizada em grupos, com títulos de seção,
+                    ícones e indicação da página atualmente selecionada.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <aside class="demo-sidebar">
+
+                    <nav class="nav" aria-label="Menu principal">
+
+                        <div class="nav__section">
+
+                            <h3 class="nav__section-title">
+                                Geral
+                            </h3>
+
+                            <ul class="nav__list">
+
+                                <li>
+                                    <a
+                                        href="#dashboard"
+                                        class="nav__link nav__link--active"
+                                        aria-current="page"
+                                    >
+                                        <span class="demo-icon" aria-hidden="true">▦</span>
+                                        Dashboard
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#reservas" class="nav__link">
+                                        <span class="demo-icon" aria-hidden="true">✈</span>
+                                        Minhas reservas
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#destinos" class="nav__link">
+                                        <span class="demo-icon" aria-hidden="true">◎</span>
+                                        Destinos
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="nav__section">
+
+                            <h3 class="nav__section-title">
+                                Administração
+                            </h3>
+
+                            <ul class="nav__list">
+
+                                <li>
+                                    <a href="#viagens" class="nav__link">
+                                        <span class="demo-icon" aria-hidden="true">▤</span>
+                                        Gerenciar viagens
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#clientes" class="nav__link">
+                                        <span class="demo-icon" aria-hidden="true">♙</span>
+                                        Clientes
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#relatorios" class="nav__link">
+                                        <span class="demo-icon" aria-hidden="true">▥</span>
+                                        Relatórios
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </nav>
+
+                </aside>
+
+            </div>
+        </section>
+
+        <!-- Exemplo 2: Grupos de navegação -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>2. Separação por grupos</h2>
+                <p>
+                    Demonstra como utilizar diferentes títulos para
+                    organizar os links de acordo com sua finalidade.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <aside class="demo-sidebar">
+
+                    <nav class="nav" aria-label="Navegação por categorias">
+
+                        <div class="nav__section">
+
+                            <h3 class="nav__section-title">
+                                Explorar
+                            </h3>
+
+                            <ul class="nav__list">
+                                <li>
+                                    <a href="#praias" class="nav__link">
+                                        <span class="demo-icon" aria-hidden="true">🏖</span>
+                                        Praias
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#montanhas" class="nav__link">
+                                        <span class="demo-icon" aria-hidden="true">🏔</span>
+                                        Montanhas
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#cidades" class="nav__link">
+                                        <span class="demo-icon" aria-hidden="true">🏙</span>
+                                        Cidades
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                        <div class="nav__section">
+
+                            <h3 class="nav__section-title">
+                                Minha conta
+                            </h3>
+
+                            <ul class="nav__list">
+                                <li>
+                                    <a href="#perfil" class="nav__link">
+                                        <span class="demo-icon" aria-hidden="true">♙</span>
+                                        Meu perfil
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#favoritos" class="nav__link">
+                                        <span class="demo-icon" aria-hidden="true">♡</span>
+                                        Favoritos
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </nav>
+
+                </aside>
+
+            </div>
+        </section>
+
+        <!-- Exemplo 3: Link ativo -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>3. Estado ativo</h2>
+                <p>
+                    O modificador nav__link--active destaca a página
+                    atual dentro do menu.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <aside class="demo-sidebar">
+
+                    <nav class="nav" aria-label="Navegação de exemplo">
+
+                        <h3 class="nav__section-title">
+                            Gerenciamento
+                        </h3>
+
+                        <ul class="nav__list">
+
+                            <li>
+                                <a href="#dashboard-exemplo" class="nav__link">
+                                    Dashboard
+                                </a>
+                            </li>
+
+                            <li>
+                                <a
+                                    href="#pacotes-exemplo"
+                                    class="nav__link nav__link--active"
+                                    aria-current="page"
+                                >
+                                    Pacotes de viagem
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#usuarios-exemplo" class="nav__link">
+                                    Usuários
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#configuracoes-exemplo" class="nav__link">
+                                    Configurações
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+
+                </aside>
+
+            </div>
+        </section>
+
+        <!-- Exemplo 4: Estado hover -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>4. Estado hover</h2>
+                <p>
+                    Passe o cursor sobre os links para visualizar
+                    a alteração de fundo e cor definida no CSS.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <aside class="demo-sidebar">
+
+                    <nav class="nav" aria-label="Menu interativo">
+
+                        <h3 class="nav__section-title">
+                            Navegação
+                        </h3>
+
+                        <ul class="nav__list">
+                            <li>
+                                <a href="#inicio-hover" class="nav__link">
+                                    Início
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#buscar-hover" class="nav__link">
+                                    Buscar viagens
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#ofertas-hover" class="nav__link">
+                                    Ofertas
+                                </a>
+                            </li>
+                        </ul>
+
+                    </nav>
+
+                    <p class="demo-hover-hint">
+                        Experimente posicionar o cursor sobre os links.
+                    </p>
+
+                </aside>
+
+            </div>
+        </section>
+
+        <!-- Exemplo 5: Navegação horizontal -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>5. Navegação horizontal</h2>
+                <p>
+                    Exemplo de reaproveitamento dos links em uma
+                    navegação horizontal. O layout horizontal é
+                    exclusivo desta demonstração.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <div class="demo-horizontal">
+
+                    <nav class="nav" aria-label="Navegação horizontal">
+
+                        <ul class="nav__list">
+
+                            <li>
+                                <a href="#home-horizontal" class="nav__link nav__link--active">
+                                    Início
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#destinos-horizontal" class="nav__link">
+                                    Destinos
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#pacotes-horizontal" class="nav__link">
+                                    Pacotes
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#contato-horizontal" class="nav__link">
+                                    Contato
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

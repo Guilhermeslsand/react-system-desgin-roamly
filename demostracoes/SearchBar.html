@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração - Search Bar</title>
+
+    <!-- CSS dos componentes -->
+    <link rel="stylesheet" href="../styles/SearchBar.css">
+    <link rel="stylesheet" href="../styles/Hero.css">
+
+    <style>
+        :root {
+            --color-surface: #ffffff;
+            --color-border: #e2e8f0;
+            --color-text-light: #94a3b8;
+            --color-text-main: #1e293b;
+            --color-primary: #0d9488;
+            --color-primary-dark: #0f766e;
+
+            --radius-md: 12px;
+            --radius-sm: 6px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background: #f1f5f9;
+            color: #1e293b;
+            font-family: Arial, sans-serif;
+        }
+
+        .demo-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .demo-title {
+            margin-bottom: 8px;
+            font-size: 28px;
+        }
+
+        .demo-description {
+            margin-bottom: 36px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .demo-section {
+            margin-bottom: 40px;
+        }
+
+        .demo-section__title {
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+
+        .demo-section__description {
+            margin-bottom: 16px;
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Área de demonstração do Hero */
+        .demo-hero-wrapper {
+            position: relative;
+            margin-bottom: 60px;
+            border-radius: 16px;
+            background: #064e3b;
+        }
+
+        .demo-hero-wrapper .hero {
+            padding: 48px 32px 90px;
+            color: #fff;
+            text-align: center;
+            background:
+                radial-gradient(
+                    rgba(255, 255, 255, 0.12) 1px,
+                    transparent 1px
+                ) 0 0 / 20px 20px,
+                linear-gradient(135deg, #0f766e, #064e3b);
+            border-radius: 16px;
+        }
+
+        .demo-hero-wrapper .hero__title {
+            font-size: 2rem;
+        }
+
+        .demo-hero-wrapper .hero__subtitle {
+            max-width: 540px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .demo-content {
+            padding: 32px;
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        .demo-content h3 {
+            margin-top: 0;
+        }
+
+        .demo-content p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .demo-preview {
+            padding: 32px 20px 48px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            background: #f8fafc;
+        }
+
+        .demo-search-wrapper {
+            position: relative;
+            min-height: 130px;
+        }
+
+        .demo-search-wrapper .search-bar {
+            position: static;
+            width: 100%;
+            max-width: 840px;
+            margin: 0 auto;
+            transform: none;
+        }
+
+        .demo-search-wrapper .search-bar__group {
+            min-width: 0;
+        }
+
+        .demo-search-wrapper .search-bar__input {
+            min-width: 0;
+        }
+
+        .demo-note {
+            padding: 16px;
+            border-left: 4px solid #0d9488;
+            border-radius: 4px;
+            background: #ecfdf5;
+            color: #065f46;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 24px 12px;
+            }
+
+            .demo-hero-wrapper .hero {
+                padding: 40px 20px 180px;
+            }
+
+            .demo-hero-wrapper .hero__title {
+                font-size: 1.6rem;
+            }
+
+            .demo-hero-wrapper .search-bar {
+                bottom: -150px;
+                width: calc(100% - 24px);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+                padding: 16px;
+            }
+
+            .demo-hero-wrapper .search-bar__group {
+                width: 100%;
+                padding: 8px 4px;
+            }
+
+            .demo-hero-wrapper .search-bar__divider {
+                width: 100%;
+                height: 1px;
+            }
+
+            .demo-hero-wrapper .search-bar__button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .demo-search-wrapper .search-bar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+            }
+
+            .demo-search-wrapper .search-bar__group {
+                width: 100%;
+                padding: 8px 4px;
+            }
+
+            .demo-search-wrapper .search-bar__divider {
+                width: 100%;
+                height: 1px;
+            }
+
+            .demo-search-wrapper .search-bar__button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="demo-container">
+
+        <h1 class="demo-title">Componente Search Bar</h1>
+
+        <p class="demo-description">
+            Demonstração da barra de pesquisa utilizada para receber
+            informações de destino, datas e passageiros, permitindo
+            iniciar uma busca por viagens.
+        </p>
+
+        <!-- Exemplo 1: Search Bar integrada ao Hero -->
+        <section class="demo-section">
+
+            <h2 class="demo-section__title">
+                1. Search Bar integrada ao Hero
+            </h2>
+
+            <p class="demo-section__description">
+                Exemplo principal: a barra fica posicionada na parte
+                inferior da seção Hero, sobrepondo parcialmente
+                o conteúdo seguinte.
+            </p>
+
+            <div class="demo-hero-wrapper">
+
+                <section class="hero">
+
+                    <span class="hero__tag">
+                        Sua próxima aventura
+                    </span>
+
+                    <h2 class="hero__title">
+                        Encontre sua próxima viagem
+                    </h2>
+
+                    <p class="hero__subtitle">
+                        Pesquise destinos, datas e encontre
+                        as melhores opções para viajar.
+                    </p>
+
+                </section>
+
+                <form class="search-bar" action="#" method="get">
+
+                    <div class="search-bar__group">
+                        <label
+                            class="search-bar__label"
+                            for="destination"
+                        >
+                            DESTINO
+                        </label>
+
+                        <input
+                            class="search-bar__input"
+                            type="text"
+                            id="destination"
+                            name="destination"
+                            placeholder="Para onde vamos?"
+                        >
+                    </div>
+
+                    <div class="search-bar__divider"></div>
+
+                    <div class="search-bar__group">
+                        <label
+                            class="search-bar__label"
+                            for="departure"
+                        >
+                            CHECK-IN
+                        </label>
+
+                        <input
+                            class="search-bar__input"
+                            type="date"
+                            id="departure"
+                            name="departure"
+                        >
+                    </div>
+
+                    <div class="search-bar__divider"></div>
+
+                    <div class="search-bar__group">
+                        <label
+                            class="search-bar__label"
+                            for="return"
+                        >
+                            CHECK-OUT
+                        </label>
+
+                        <input
+                            class="search-bar__input"
+                            type="date"
+                            id="return"
+                            name="return"
+                        >
+                    </div>
+
+                    <div class="search-bar__divider"></div>
+
+                    <div class="search-bar__group">
+                        <label
+                            class="search-bar__label"
+                            for="passengers"
+                        >
+                            PASSAGEIROS
+                        </label>
+
+                        <input
+                            class="search-bar__input"
+                            type="number"
+                            id="passengers"
+                            name="passengers"
+                            min="1"
+                            value="2"
+                        >
+                    </div>
+
+                    <button
+                        class="search-bar__button"
+                        type="submit"
+                    >
+                        <span aria-hidden="true">⌕</span>
+                        Buscar
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="demo-content">
+                <h3>Destinos populares</h3>
+                <p>
+                    Explore os destinos mais procurados e encontre
+                    a melhor opção para sua próxima viagem.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Exemplo 2: Search Bar isolada -->
+        <section class="demo-section">
+
+            <h2 class="demo-section__title">
+                2. Search Bar isolada
+            </h2>
+
+            <p class="demo-section__description">
+                Demonstração do componente sem a dependência visual
+                do Hero. O posicionamento é ajustado exclusivamente
+                nesta página de demonstração.
+            </p>
+
+            <div class="demo-preview">
+
+                <div class="demo-search-wrapper">
+
+                    <form class="search-bar" action="#" method="get">
+
+                        <div class="search-bar__group">
+                            <label
+                                class="search-bar__label"
+                                for="destination-2"
+                            >
+                                DESTINO
+                            </label>
+
+                            <input
+                                class="search-bar__input"
+                                type="text"
+                                id="destination-2"
+                                name="destination"
+                                placeholder="Ex: Rio de Janeiro"
+                            >
+                        </div>
+
+                        <div class="search-bar__divider"></div>
+
+                        <div class="search-bar__group">
+                            <label
+                                class="search-bar__label"
+                                for="date-2"
+                            >
+                                DATA
+                            </label>
+
+                            <input
+                                class="search-bar__input"
+                                type="date"
+                                id="date-2"
+                                name="date"
+                            >
+                        </div>
+
+                        <div class="search-bar__divider"></div>
+
+                        <div class="search-bar__group">
+                            <label
+                                class="search-bar__label"
+                                for="passengers-2"
+                            >
+                                PESSOAS
+                            </label>
+
+                            <input
+                                class="search-bar__input"
+                                type="number"
+                                id="passengers-2"
+                                name="passengers"
+                                min="1"
+                                value="1"
+                            >
+                        </div>
+
+                        <button
+                            class="search-bar__button"
+                            type="submit"
+                        >
+                            <span aria-hidden="true">⌕</span>
+                            Pesquisar
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Exemplo 3: Search Bar com campos textuais -->
+        <section class="demo-section">
+
+            <h2 class="demo-section__title">
+                3. Search Bar com campos textuais
+            </h2>
+
+            <p class="demo-section__description">
+                Demonstra uma variação mais simples, com campos
+                de destino, período e quantidade de viajantes.
+            </p>
+
+            <div class="demo-preview">
+
+                <div class="demo-search-wrapper">
+
+                    <form class="search-bar" action="#" method="get">
+
+                        <div class="search-bar__group">
+                            <label
+                                class="search-bar__label"
+                                for="destination-3"
+                            >
+                                PARA ONDE?
+                            </label>
+
+                            <input
+                                class="search-bar__input"
+                                type="text"
+                                id="destination-3"
+                                name="destination"
+                                placeholder="São Paulo, Brasil"
+                            >
+                        </div>
+
+                        <div class="search-bar__divider"></div>
+
+                        <div class="search-bar__group">
+                            <label
+                                class="search-bar__label"
+                                for="period-3"
+                            >
+                                PERÍODO
+                            </label>
+
+                            <input
+                                class="search-bar__input"
+                                type="text"
+                                id="period-3"
+                                name="period"
+                                placeholder="Escolha as datas"
+                            >
+                        </div>
+
+                        <div class="demo-search-wrapper__group search-bar__group">
+                            <label
+                                class="search-bar__label"
+                                for="travelers-3"
+                            >
+                                VIAJANTES
+                            </label>
+
+                            <input
+                                class="search-bar__input"
+                                type="text"
+                                id="travelers-3"
+                                name="travelers"
+                                value="2 adultos"
+                            >
+                        </div>
+
+                        <button
+                            class="search-bar__button"
+                            type="submit"
+                        >
+                            <span aria-hidden="true">⌕</span>
+                            Buscar viagens
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="demo-note">
+            <strong>Observação:</strong>
+            os formulários são demonstrativos. A implementação
+            de uma pesquisa real depende da integração com a API
+            de busca de viagens.
+        </div>
+
+    </main>
+
+</body>
+</html>

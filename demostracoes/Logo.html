@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração - Logo</title>
+
+    <!-- CSS do componente -->
+    <link rel="stylesheet" href="../styles/Logo.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background: #f1f5f9;
+            color: #1e293b;
+            font-family: Arial, sans-serif;
+        }
+
+        .demo-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .demo-title {
+            margin-bottom: 8px;
+            font-size: 28px;
+        }
+
+        .demo-description {
+            margin-bottom: 36px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .demo-section {
+            margin-bottom: 32px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+        .demo-section__info {
+            padding: 20px;
+        }
+
+        .demo-section__info h2 {
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+
+        .demo-section__info p {
+            margin: 0;
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .demo-preview {
+            display: flex;
+            min-height: 130px;
+            align-items: center;
+            padding: 32px;
+            border-top: 1px solid #e2e8f0;
+            background: #f8fafc;
+        }
+
+        /* Estilos exclusivos da demonstração */
+        .demo-logo-text {
+            color: #0f766e;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .demo-logo-description {
+            margin: 0;
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        .demo-header {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 32px;
+            border-top: 1px solid #e2e8f0;
+            background: #fff;
+        }
+
+        .demo-header__nav {
+            display: flex;
+            gap: 24px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .demo-sidebar {
+            width: 260px;
+            min-height: 280px;
+            padding: 24px;
+            background: #0f172a;
+        }
+
+        .demo-sidebar .logo {
+            margin-bottom: 32px;
+        }
+
+        .demo-sidebar .demo-logo-text {
+            color: #fff;
+        }
+
+        .demo-sidebar__item {
+            padding: 12px 8px;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .demo-sidebar__item--active {
+            border-radius: 6px;
+            background: #1e293b;
+            color: #fff;
+        }
+
+        .demo-comparison {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .demo-comparison__item {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .demo-comparison__label {
+            color: #64748b;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 24px 12px;
+            }
+
+            .demo-preview {
+                padding: 20px;
+            }
+
+            .demo-header {
+                padding: 16px;
+            }
+
+            .demo-header__nav {
+                display: none;
+            }
+
+            .demo-sidebar {
+                width: 100%;
+            }
+
+            .logo__img {
+                max-width: 130px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="demo-container">
+
+        <h1 class="demo-title">Componente Logo</h1>
+
+        <p class="demo-description">
+            Demonstração do componente responsável pela identificação
+            visual da marca, com diferentes formas de apresentação
+            e utilização na interface.
+        </p>
+
+        <!-- Exemplo 1: Logo com ícone e texto -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>1. Logo com ícone e texto</h2>
+                <p>
+                    Utiliza o elemento logo__icon para representar
+                    graficamente a marca e um texto complementar.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <div class="logo">
+
+                    <div class="logo__icon" aria-hidden="true">
+                        V
+                    </div>
+
+                    <span class="demo-logo-text">
+                        ViajeMais
+                    </span>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Exemplo 2: Logo com imagem -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>2. Logo com imagem</h2>
+                <p>
+                    Utiliza uma imagem como identidade visual principal,
+                    preservando sua proporção original.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <div class="logo">
+
+                    <img
+                        class="logo__img"
+                        src="https://placehold.co/320x80/0d9488/ffffff?text=ViajeMais"
+                        alt="ViajeMais - Plataforma de viagens"
+                    >
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Exemplo 3: Logo somente com ícone -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>3. Logo somente com ícone</h2>
+                <p>
+                    Apresenta apenas o símbolo da marca, útil em espaços
+                    reduzidos ou interfaces compactas.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <div class="logo">
+
+                    <div class="logo__icon" aria-label="ViajeMais">
+                        V
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Exemplo 4: Comparação entre formatos -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>4. Comparação de formatos</h2>
+                <p>
+                    Comparação das duas alternativas de apresentação
+                    previstas no componente.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <div class="demo-comparison">
+
+                    <div class="demo-comparison__item">
+
+                        <span class="demo-comparison__label">
+                            Ícone e texto
+                        </span>
+
+                        <div class="logo">
+                            <div class="logo__icon" aria-hidden="true">
+                                V
+                            </div>
+
+                            <span class="demo-logo-text">
+                                ViajeMais
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="demo-comparison__item">
+
+                        <span class="demo-comparison__label">
+                            Imagem
+                        </span>
+
+                        <div class="logo">
+                            <img
+                                class="logo__img"
+                                src="https://placehold.co/320x80/0d9488/ffffff?text=ViajeMais"
+                                alt="ViajeMais"
+                            >
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Exemplo 5: Logo dentro do Header -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>5. Logo no Header</h2>
+                <p>
+                    Exemplo de utilização da identidade visual
+                    no cabeçalho principal da plataforma.
+                </p>
+            </div>
+
+            <div class="demo-header">
+
+                <div class="logo">
+
+                    <div class="logo__icon" aria-hidden="true">
+                        V
+                    </div>
+
+                    <span class="demo-logo-text">
+                        ViajeMais
+                    </span>
+
+                </div>
+
+                <nav class="demo-header__nav" aria-label="Menu principal">
+                    <span>Destinos</span>
+                    <span>Pacotes</span>
+                    <span>Sobre nós</span>
+                </nav>
+
+            </div>
+        </section>
+
+        <!-- Exemplo 6: Logo dentro da Sidebar -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>6. Logo na Sidebar</h2>
+                <p>
+                    Exemplo de utilização em um painel administrativo,
+                    com fundo escuro e navegação lateral.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <aside class="demo-sidebar">
+
+                    <div class="logo">
+
+                        <div class="logo__icon" aria-hidden="true">
+                            V
+                        </div>
+
+                        <span class="demo-logo-text">
+                            ViajeMais
+                        </span>
+
+                    </div>
+
+                    <div class="demo-sidebar__item demo-sidebar__item--active">
+                        Dashboard
+                    </div>
+
+                    <div class="demo-sidebar__item">
+                        Viagens
+                    </div>
+
+                    <div class="demo-sidebar__item">
+                        Clientes
+                    </div>
+
+                    <div class="demo-sidebar__item">
+                        Configurações
+                    </div>
+
+                </aside>
+
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

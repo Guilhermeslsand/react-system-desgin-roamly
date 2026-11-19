@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração de Destinations BEM</title>
+
+    <!-- CSS dos componentes -->
+    <link rel="stylesheet" href="../styles/Destinations.css">
+    <link rel="stylesheet" href="../styles/Card.css">
+
+    <!-- Estilos exclusivos da página de demonstração -->
+    <style>
+        :root {
+            --color-primary: #0d9488;
+            --color-text-main: #1e293b;
+            --color-text-secondary: #6b7280;
+            --color-border: #e2e8f0;
+            --radius-sm: 6px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            background-color: #f8fafc;
+            color: var(--color-text-main);
+        }
+
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .demo-title {
+            margin-bottom: 8px;
+            font-size: 28px;
+        }
+
+        .demo-description {
+            margin-bottom: 36px;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        .demo-section {
+            margin-bottom: 32px;
+            padding: 24px;
+            background-color: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+        }
+
+        .demo-section h2 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .demo-section > p {
+            margin-bottom: 24px;
+            color: var(--color-text-secondary);
+            font-size: 14px;
+        }
+
+        .demo-card {
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+
+        .demo-card img {
+            display: block;
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .demo-card-content {
+            padding: 14px;
+        }
+
+        .demo-card-content h3 {
+            margin: 0 0 6px;
+            font-size: 16px;
+        }
+
+        .demo-card-content p {
+            margin: 0;
+            color: var(--color-text-secondary);
+            font-size: 13px;
+        }
+
+        .demo-card-price {
+            display: block;
+            margin-top: 12px;
+            color: var(--color-primary);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .demo-empty {
+            padding: 32px;
+            border: 1px dashed var(--color-border);
+            border-radius: 8px;
+            color: var(--color-text-secondary);
+            text-align: center;
+        }
+
+        @media (max-width: 900px) {
+            .destinations__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            .demo-section {
+                padding: 16px;
+            }
+
+            .destinations {
+                padding: 16px 0;
+            }
+
+            .destinations__header {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .destinations__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="demo-container">
+
+        <h1 class="demo-title">Demonstração de Destinations</h1>
+
+        <p class="demo-description">
+            Exemplos de utilização da seção de destinos turísticos,
+            demonstrando a organização do cabeçalho, textos informativos,
+            links de navegação e grade de destinos.
+        </p>
+
+        <!-- Seção 1: Destinations padrão -->
+        <section class="demo-section">
+            <h2>1. Seção de destinos padrão</h2>
+
+            <p>
+                Exemplo completo da seção com cabeçalho e quatro destinos.
+            </p>
+
+            <section class="destinations">
+
+                <header class="destinations__header">
+                    <div>
+                        <h2 class="destinations__title">
+                            Destinos populares
+                        </h2>
+
+                        <p class="destinations__subtitle">
+                            Explore os lugares mais procurados pelos viajantes.
+                        </p>
+                    </div>
+
+                    <a href="#todos-destinos" class="destinations__link">
+                        Ver todos os destinos →
+                    </a>
+                </header>
+
+                <div class="destinations__grid">
+
+                    <article class="demo-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1544986581-efac024faf62?w=600"
+                            alt="Vista panorâmica do Rio de Janeiro"
+                        >
+
+                        <div class="demo-card-content">
+                            <h3>Rio de Janeiro</h3>
+                            <p>Brasil · América do Sul</p>
+                            <span class="demo-card-price">
+                                A partir de R$ 899
+                            </span>
+                        </div>
+                    </article>
+
+                    <article class="demo-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600"
+                            alt="Torre Eiffel em Paris"
+                        >
+
+                        <div class="demo-card-content">
+                            <h3>Paris</h3>
+                            <p>França · Europa</p>
+                            <span class="demo-card-price">
+                                A partir de R$ 3.200
+                            </span>
+                        </div>
+                    </article>
+
+                    <article class="demo-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600"
+                            alt="Paisagem urbana de Nova York"
+                        >
+
+                        <div class="demo-card-content">
+                            <h3>Nova York</h3>
+                            <p>Estados Unidos · América do Norte</p>
+                            <span class="demo-card-price">
+                                A partir de R$ 2.800
+                            </span>
+                        </div>
+                    </article>
+
+                    <article class="demo-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=600"
+                            alt="Casas brancas em Santorini"
+                        >
+
+                        <div class="demo-card-content">
+                            <h3>Santorini</h3>
+                            <p>Grécia · Europa</p>
+                            <span class="demo-card-price">
+                                A partir de R$ 4.500
+                            </span>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+        </section>
+
+        <!-- Seção 2: Cabeçalho sem link -->
+        <section class="demo-section">
+            <h2>2. Cabeçalho da seção</h2>
+
+            <p>
+                Exemplo do cabeçalho utilizando título e descrição,
+                sem apresentar um link de navegação.
+            </p>
+
+            <section class="destinations">
+                <header class="destinations__header">
+                    <div>
+                        <h2 class="destinations__title">
+                            Explore novos lugares
+                        </h2>
+
+                        <p class="destinations__subtitle">
+                            Encontre seu próximo destino de viagem.
+                        </p>
+                    </div>
+                </header>
+            </section>
+        </section>
+
+        <!-- Seção 3: Diferentes conteúdos na grade -->
+        <section class="demo-section">
+            <h2>3. Grade com diferentes destinos</h2>
+
+            <p>
+                A grade permite organizar diferentes quantidades
+                de cards, conforme os destinos disponíveis.
+            </p>
+
+            <section class="destinations">
+                <header class="destinations__header">
+                    <div>
+                        <h2 class="destinations__title">
+                            Destinos nacionais
+                        </h2>
+
+                        <p class="destinations__subtitle">
+                            Conheça lugares incríveis pelo Brasil.
+                        </p>
+                    </div>
+
+                    <a href="#destinos-nacionais" class="destinations__link">
+                        Ver mais →
+                    </a>
+                </header>
+
+                <div class="destinations__grid">
+
+                    <article class="demo-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=600"
+                            alt="Paisagem de Salvador"
+                        >
+
+                        <div class="demo-card-content">
+                            <h3>Salvador</h3>
+                            <p>Bahia · Brasil</p>
+                        </div>
+                    </article>
+
+                    <article class="demo-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?w=600"
+                            alt="Praia em Florianópolis"
+                        >
+
+                        <div class="demo-card-content">
+                            <h3>Florianópolis</h3>
+                            <p>Santa Catarina · Brasil</p>
+                        </div>
+                    </article>
+
+                    <article class="demo-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600"
+                            alt="Paisagem natural de Foz do Iguaçu"
+                        >
+
+                        <div class="demo-card-content">
+                            <h3>Foz do Iguaçu</h3>
+                            <p>Paraná · Brasil</p>
+                        </div>
+                    </article>
+
+                    <article class="demo-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1547995886-6dc09384c6e6?w=600"
+                            alt="Paisagem de Jericoacoara"
+                        >
+
+                        <div class="demo-card-content">
+                            <h3>Jericoacoara</h3>
+                            <p>Ceará · Brasil</p>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+        </section>
+
+        <!-- Seção 4: Grade sem resultados -->
+        <section class="demo-section">
+            <h2>4. Grade sem destinos</h2>
+
+            <p>
+                Exemplo de apresentação quando não existem destinos
+                disponíveis para exibição.
+            </p>
+
+            <section class="destinations">
+                <header class="destinations__header">
+                    <div>
+                        <h2 class="destinations__title">
+                            Destinos encontrados
+                        </h2>
+
+                        <p class="destinations__subtitle">
+                            Resultados da sua pesquisa.
+                        </p>
+                    </div>
+                </header>
+
+                <div class="destinations__grid">
+                    <div class="demo-empty">
+                        Nenhum destino encontrado.
+                    </div>
+                </div>
+            </section>
+        </section>
+
+    </main>
+</body>
+</html>

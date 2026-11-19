@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração de Checkbox Group BEM</title>
+
+    <!-- CSS do componente -->
+    <link rel="stylesheet" href="../styles/Checkbox.css">
+
+    <!-- Estilos exclusivos da página de demonstração -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .demo-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .demo-title {
+            margin-bottom: 8px;
+            font-size: 28px;
+        }
+
+        .demo-description {
+            margin-bottom: 36px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .demo-section {
+            margin-bottom: 32px;
+            padding: 24px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+        }
+
+        .demo-section h2 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .demo-section p {
+            margin-bottom: 20px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .demo-group {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .demo-card {
+            padding: 18px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .demo-card h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        .demo-inline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .demo-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            max-width: 450px;
+        }
+
+        .demo-form-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .demo-form-actions button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            background-color: #0d9488;
+            color: #ffffff;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .demo-form-actions button[type="reset"] {
+            background-color: #e2e8f0;
+            color: #334155;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            .demo-section {
+                padding: 18px;
+            }
+
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="demo-container">
+
+        <h1 class="demo-title">Demonstração de Checkbox Group</h1>
+
+        <p class="demo-description">
+            Exemplos de utilização dos grupos de seleção da aplicação,
+            demonstrando como organizar opções de filtros, preferências
+            e configurações em diferentes contextos.
+        </p>
+
+        <!-- Seção 1: Checkbox individual -->
+        <section class="demo-section">
+            <h2>1. Checkbox individual</h2>
+
+            <p>
+                Utilização básica do componente com uma opção de seleção.
+            </p>
+
+            <div class="demo-group">
+                <label class="checkbox-group">
+                    <input type="checkbox" name="newsletter">
+                    Receber novidades e promoções
+                </label>
+
+                <label class="checkbox-group">
+                    <input type="checkbox" name="notifications" checked>
+                    Receber notificações
+                </label>
+            </div>
+        </section>
+
+        <!-- Seção 2: Grupo de filtros -->
+        <section class="demo-section">
+            <h2>2. Filtros de destinos</h2>
+
+            <p>
+                Exemplo de utilização em uma tela de busca de viagens,
+                permitindo selecionar diferentes tipos de destino.
+            </p>
+
+            <div class="demo-card">
+                <h3>Tipo de destino</h3>
+
+                <div class="demo-group">
+                    <label class="checkbox-group">
+                        <input
+                            type="checkbox"
+                            name="destination"
+                            value="praia"
+                            checked
+                        >
+                        Praia
+                    </label>
+
+                    <label class="checkbox-group">
+                        <input
+                            type="checkbox"
+                            name="destination"
+                            value="montanha"
+                        >
+                        Montanha
+                    </label>
+
+                    <label class="checkbox-group">
+                        <input
+                            type="checkbox"
+                            name="destination"
+                            value="cidade"
+                        >
+                        Cidade
+                    </label>
+
+                    <label class="checkbox-group">
+                        <input
+                            type="checkbox"
+                            name="destination"
+                            value="campo"
+                        >
+                        Campo
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Preferências de viagem -->
+        <section class="demo-section">
+            <h2>3. Preferências de viagem</h2>
+
+            <p>
+                Permite selecionar múltiplas preferências durante
+                a configuração de uma viagem.
+            </p>
+
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Serviços desejados</h3>
+
+                    <div class="demo-group">
+                        <label class="checkbox-group">
+                            <input
+                                type="checkbox"
+                                name="services"
+                                value="hotel"
+                                checked
+                            >
+                            Hospedagem
+                        </label>
+
+                        <label class="checkbox-group">
+                            <input
+                                type="checkbox"
+                                name="services"
+                                value="flight"
+                                checked
+                            >
+                            Passagem aérea
+                        </label>
+
+                        <label class="checkbox-group">
+                            <input
+                                type="checkbox"
+                                name="services"
+                                value="transfer"
+                            >
+                            Transfer
+                        </label>
+
+                        <label class="checkbox-group">
+                            <input
+                                type="checkbox"
+                                name="services"
+                                value="insurance"
+                            >
+                            Seguro viagem
+                        </label>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>Tipo de hospedagem</h3>
+
+                    <div class="demo-group">
+                        <label class="checkbox-group">
+                            <input
+                                type="checkbox"
+                                name="accommodation"
+                                value="hotel"
+                            >
+                            Hotel
+                        </label>
+
+                        <label class="checkbox-group">
+                            <input
+                                type="checkbox"
+                                name="accommodation"
+                                value="resort"
+                            >
+                            Resort
+                        </label>
+
+                        <label class="checkbox-group">
+                            <input
+                                type="checkbox"
+                                name="accommodation"
+                                value="hostel"
+                            >
+                            Hostel
+                        </label>
+
+                        <label class="checkbox-group">
+                            <input
+                                type="checkbox"
+                                name="accommodation"
+                                value="apartment"
+                            >
+                            Apartamento
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 4: Opções em linha -->
+        <section class="demo-section">
+            <h2>4. Checkboxes em linha</h2>
+
+            <p>
+                Exemplo de organização horizontal quando existem poucas
+                opções disponíveis.
+            </p>
+
+            <div class="demo-inline">
+                <label class="checkbox-group">
+                    <input type="checkbox" name="period" value="morning">
+                    Manhã
+                </label>
+
+                <label class="checkbox-group">
+                    <input type="checkbox" name="period" value="afternoon">
+                    Tarde
+                </label>
+
+                <label class="checkbox-group">
+                    <input type="checkbox" name="period" value="night">
+                    Noite
+                </label>
+            </div>
+        </section>
+
+        <!-- Seção 5: Checkbox em formulário -->
+        <section class="demo-section">
+            <h2>5. Checkbox em formulário</h2>
+
+            <p>
+                Exemplo de utilização em um formulário de reserva,
+                incluindo confirmação de termos e preferências.
+            </p>
+
+            <form class="demo-form" action="#" method="get">
+                <label class="checkbox-group">
+                    <input
+                        type="checkbox"
+                        name="terms"
+                        value="accepted"
+                        required
+                    >
+                    Li e aceito os termos de uso.
+                </label>
+
+                <label class="checkbox-group">
+                    <input
+                        type="checkbox"
+                        name="privacy"
+                        value="accepted"
+                        required
+                    >
+                    Li e aceito a política de privacidade.
+                </label>
+
+                <label class="checkbox-group">
+                    <input
+                        type="checkbox"
+                        name="promotions"
+                        value="yes"
+                    >
+                    Desejo receber ofertas e promoções.
+                </label>
+
+                <div class="demo-form-actions">
+                    <button type="submit">
+                        Confirmar
+                    </button>
+
+                    <button type="reset">
+                        Limpar
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+</body>
+</html>

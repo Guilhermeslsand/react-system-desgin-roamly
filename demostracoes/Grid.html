@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração de Layout Grid</title>
+
+    <!-- CSS do componente -->
+    <link rel="stylesheet" href="../styles/Grid.css">
+
+    <!-- Estilos exclusivos da página de demonstração -->
+    <style>
+        :root {
+            --color-primary: #0d9488;
+            --color-surface: #ffffff;
+            --color-background: #f8fafc;
+            --color-border: #e2e8f0;
+            --color-text: #1e293b;
+            --color-muted: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+        }
+
+        .demo-title {
+            margin-bottom: 8px;
+            font-size: 28px;
+        }
+
+        .demo-description {
+            margin-bottom: 36px;
+            color: var(--color-muted);
+            line-height: 1.6;
+        }
+
+        .demo-section {
+            margin-bottom: 36px;
+            padding: 24px;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+        }
+
+        .demo-section h2 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 19px;
+        }
+
+        .demo-section > p {
+            margin-bottom: 24px;
+            color: var(--color-muted);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .demo-card {
+            min-width: 0;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+        }
+
+        .demo-card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .demo-card p {
+            margin: 0;
+            color: var(--color-muted);
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .demo-value {
+            display: block;
+            margin-top: 12px;
+            color: var(--color-primary);
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .demo-destination img {
+            width: 100%;
+            height: 140px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .demo-widget {
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .demo-widget strong {
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        .demo-widget span {
+            color: var(--color-muted);
+            font-size: 13px;
+        }
+
+        .demo-grid-label {
+            display: inline-block;
+            margin-bottom: 16px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #ccfbf1;
+            color: #115e59;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .demo-footer {
+            padding: 24px;
+            background-color: #ffffff;
+            border: 1px dashed var(--color-border);
+            border-radius: 8px;
+            color: var(--color-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 0;
+            }
+
+            .demo-section {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Container principal da demonstração -->
+    <main class="container">
+
+        <h1 class="demo-title">Demonstração de Layout Grid</h1>
+
+        <p class="demo-description">
+            Exemplos de utilização dos containers e grades responsivas
+            da aplicação, demonstrando diferentes distribuições de
+            conteúdo em duas, três e quatro colunas.
+        </p>
+
+        <!-- Seção 1: Container -->
+        <section class="demo-section">
+            <h2>1. Container principal</h2>
+
+            <p>
+                Limita a largura do conteúdo e centraliza a página
+                horizontalmente, mantendo espaçamento interno.
+            </p>
+
+            <div class="demo-footer">
+                Conteúdo centralizado dentro do container de até 1200px.
+            </div>
+        </section>
+
+        <!-- Seção 2: Grid de 2 colunas -->
+        <section class="demo-section">
+            <h2>2. Grid de 2 colunas</h2>
+
+            <p>
+                Utilizado para organizar dois blocos de conteúdo
+                lado a lado, como resumo e pagamento.
+            </p>
+
+            <span class="demo-grid-label">
+                GRID-2
+            </span>
+
+            <div class="grid-2">
+
+                <article class="demo-card">
+                    <h3>Resumo da viagem</h3>
+
+                    <p>
+                        Destino: Rio de Janeiro<br>
+                        Período: 10 a 15 de dezembro<br>
+                        Passageiros: 2 pessoas
+                    </p>
+
+                    <strong class="demo-value">
+                        R$ 2.500
+                    </strong>
+                </article>
+
+                <article class="demo-card">
+                    <h3>Pagamento</h3>
+
+                    <p>
+                        Forma de pagamento: Cartão de crédito<br>
+                        Parcelamento: 5 vezes
+                    </p>
+
+                    <strong class="demo-value">
+                        R$ 500/mês
+                    </strong>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Seção 3: Grid de 3 colunas -->
+        <section class="demo-section">
+            <h2>3. Grid de 3 colunas</h2>
+
+            <p>
+                Utilizado para dashboards, indicadores financeiros
+                e widgets de acompanhamento.
+            </p>
+
+            <span class="demo-grid-label">
+                GRID-3
+            </span>
+
+            <div class="grid-3">
+
+                <article class="demo-card demo-widget">
+                    <h3>Viagens realizadas</h3>
+                    <strong>128</strong>
+                    <span>Total de viagens concluídas</span>
+                </article>
+
+                <article class="demo-card demo-widget">
+                    <h3>Reservas pendentes</h3>
+                    <strong>24</strong>
+                    <span>Aguardando confirmação</span>
+                </article>
+
+                <article class="demo-card demo-widget">
+                    <h3>Faturamento</h3>
+                    <strong>R$ 45 mil</strong>
+                    <span>Faturamento do período</span>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Seção 4: Grid de 4 colunas -->
+        <section class="demo-section">
+            <h2>4. Grid de 4 colunas</h2>
+
+            <p>
+                Utilizado para exibir destinos populares, cards de viagens
+                e sugestões na página inicial.
+            </p>
+
+            <span class="demo-grid-label">
+                GRID-4
+            </span>
+
+            <div class="grid-4">
+
+                <article class="demo-card demo-destination">
+                    <img
+                        src="https://images.unsplash.com/photo-1544986581-efac024faf62?w=500"
+                        alt="Rio de Janeiro"
+                    >
+
+                    <h3>Rio de Janeiro</h3>
+                    <p>Brasil · América do Sul</p>
+                </article>
+
+                <article class="demo-card demo-destination">
+                    <img
+                        src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=500"
+                        alt="Paris"
+                    >
+
+                    <h3>Paris</h3>
+                    <p>França · Europa</p>
+                </article>
+
+                <article class="demo-card demo-destination">
+                    <img
+                        src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=500"
+                        alt="Nova York"
+                    >
+
+                    <h3>Nova York</h3>
+                    <p>Estados Unidos</p>
+                </article>
+
+                <article class="demo-card demo-destination">
+                    <img
+                        src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=500"
+                        alt="Santorini"
+                    >
+
+                    <h3>Santorini</h3>
+                    <p>Grécia · Europa</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Seção 5: Combinação de grids -->
+        <section class="demo-section">
+            <h2>5. Combinação de diferentes grids</h2>
+
+            <p>
+                É possível utilizar diferentes estruturas de grade
+                dentro da mesma página, de acordo com a necessidade
+                de cada seção.
+            </p>
+
+            <span class="demo-grid-label">
+                GRID-2 + GRID-3
+            </span>
+
+            <div class="grid-2">
+
+                <article class="demo-card">
+                    <h3>Resumo financeiro</h3>
+
+                    <div class="grid-3">
+
+                        <div>
+                            <p>Receita</p>
+                            <strong>R$ 20 mil</strong>
+                        </div>
+
+                        <div>
+                            <p>Despesas</p>
+                            <strong>R$ 8 mil</strong>
+                        </div>
+
+                        <div>
+                            <p>Lucro</p>
+                            <strong>R$ 12 mil</strong>
+                        </div>
+
+                    </div>
+                </article>
+
+                <article class="demo-card">
+                    <h3>Informações da viagem</h3>
+
+                    <p>
+                        Destino: Paris<br>
+                        Data: 15/12/2026<br>
+                        Duração: 7 dias<br>
+                        Status: Confirmada
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Seção 6: Comportamento responsivo -->
+        <section class="demo-section">
+            <h2>6. Comportamento responsivo</h2>
+
+            <p>
+                Reduza a largura da janela para observar a mudança
+                automática das grades.
+            </p>
+
+            <span class="demo-grid-label">
+                RESPONSIVE GRID
+            </span>
+
+            <div class="grid-4">
+
+                <article class="demo-card">
+                    <h3>Coluna 1</h3>
+                    <p>Primeiro elemento da grade.</p>
+                </article>
+
+                <article class="demo-card">
+                    <h3>Coluna 2</h3>
+                    <p>Segundo elemento da grade.</p>
+                </article>
+
+                <article class="demo-card">
+                    <h3>Coluna 3</h3>
+                    <p>Terceiro elemento da grade.</p>
+                </article>
+
+                <article class="demo-card">
+                    <h3>Coluna 4</h3>
+                    <p>Quarto elemento da grade.</p>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

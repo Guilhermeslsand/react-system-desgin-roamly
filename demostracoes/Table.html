@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração - Table</title>
+
+    <!-- CSS do componente -->
+    <link rel="stylesheet" href="../styles/Table.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background: #f1f5f9;
+            color: #1e293b;
+            font-family: Arial, sans-serif;
+        }
+
+        .demo-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .demo-title {
+            margin-bottom: 8px;
+            font-size: 28px;
+        }
+
+        .demo-description {
+            margin-bottom: 36px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .demo-section {
+            margin-bottom: 36px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+        .demo-section__info {
+            padding: 20px;
+        }
+
+        .demo-section__info h2 {
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+
+        .demo-section__info p {
+            margin: 0;
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .demo-preview {
+            padding: 24px;
+            border-top: 1px solid #e2e8f0;
+            background: #f8fafc;
+        }
+
+        .demo-table-title {
+            margin: 0 0 16px;
+            font-size: 16px;
+        }
+
+        .demo-status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .demo-status--confirmed {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .demo-status--pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .demo-status--cancelled {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .demo-status--active {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .demo-action {
+            color: #0d9488;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .demo-action:hover {
+            text-decoration: underline;
+        }
+
+        .demo-table--wide {
+            min-width: 850px;
+        }
+
+        .demo-table--wide th,
+        .demo-table--wide td {
+            white-space: nowrap;
+        }
+
+        .demo-note {
+            padding: 16px;
+            border-left: 4px solid #0d9488;
+            border-radius: 4px;
+            background: #ecfdf5;
+            color: #065f46;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 24px 12px;
+            }
+
+            .demo-preview {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="demo-container">
+
+        <h1 class="demo-title">Componente Table</h1>
+
+        <p class="demo-description">
+            Demonstração dos componentes responsáveis pela apresentação
+            de dados tabulares, com cabeçalhos, linhas, colunas
+            e rolagem horizontal.
+        </p>
+
+        <!-- Exemplo 1: Tabela de reservas -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>1. Tabela de reservas</h2>
+                <p>
+                    Exemplo de uma tabela administrativa para acompanhar
+                    as reservas realizadas pelos clientes.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <h3 class="demo-table-title">
+                    Reservas recentes
+                </h3>
+
+                <div class="table-container">
+
+                    <table class="table">
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Cliente</th>
+                                <th scope="col">Destino</th>
+                                <th scope="col">Data</th>
+                                <th scope="col">Valor</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>#RES001</td>
+                                <td>Mariana Costa</td>
+                                <td>Rio de Janeiro</td>
+                                <td>15/12/2026</td>
+                                <td>R$ 2.450,00</td>
+                                <td>
+                                    <span class="demo-status demo-status--confirmed">
+                                        Confirmada
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#RES002</td>
+                                <td>Pedro Almeida</td>
+                                <td>Florianópolis</td>
+                                <td>20/12/2026</td>
+                                <td>R$ 3.100,00</td>
+                                <td>
+                                    <span class="demo-status demo-status--pending">
+                                        Pendente
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#RES003</td>
+                                <td>Camila Santos</td>
+                                <td>Salvador</td>
+                                <td>05/01/2027</td>
+                                <td>R$ 1.890,00</td>
+                                <td>
+                                    <span class="demo-status demo-status--cancelled">
+                                        Cancelada
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Exemplo 2: Tabela de clientes -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>2. Tabela de clientes</h2>
+                <p>
+                    Exemplo de listagem de usuários cadastrados
+                    na plataforma.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <h3 class="demo-table-title">
+                    Clientes cadastrados
+                </h3>
+
+                <div class="table-container">
+
+                    <table class="table">
+
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">E-mail</th>
+                                <th scope="col">Cadastro</th>
+                                <th scope="col">Situação</th>
+                                <th scope="col">Ação</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>João Oliveira</td>
+                                <td>joao@email.com</td>
+                                <td>10/10/2026</td>
+                                <td>
+                                    <span class="demo-status demo-status--active">
+                                        Ativo
+                                    </span>
+                                </td>
+                                <td>
+                                    <a href="#cliente-001" class="demo-action">
+                                        Visualizar
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>002</td>
+                                <td>Ana Rodrigues</td>
+                                <td>ana@email.com</td>
+                                <td>12/10/2026</td>
+                                <td>
+                                    <span class="demo-status demo-status--active">
+                                        Ativo
+                                    </span>
+                                </td>
+                                <td>
+                                    <a href="#cliente-002" class="demo-action">
+                                        Visualizar
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>003</td>
+                                <td>Lucas Ferreira</td>
+                                <td>lucas@email.com</td>
+                                <td>15/10/2026</td>
+                                <td>
+                                    <span class="demo-status demo-status--pending">
+                                        Pendente
+                                    </span>
+                                </td>
+                                <td>
+                                    <a href="#cliente-003" class="demo-action">
+                                        Visualizar
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Exemplo 3: Tabela de pacotes -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>3. Tabela de pacotes de viagem</h2>
+                <p>
+                    Exemplo de gerenciamento de pacotes disponíveis
+                    para comercialização na plataforma.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <h3 class="demo-table-title">
+                    Pacotes disponíveis
+                </h3>
+
+                <div class="table-container">
+
+                    <table class="table">
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Pacote</th>
+                                <th scope="col">Destino</th>
+                                <th scope="col">Duração</th>
+                                <th scope="col">Preço</th>
+                                <th scope="col">Vagas</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Verão no Nordeste</td>
+                                <td>Maceió</td>
+                                <td>7 dias</td>
+                                <td>R$ 2.999,00</td>
+                                <td>12</td>
+                                <td>
+                                    <span class="demo-status demo-status--active">
+                                        Disponível
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Inverno na Serra</td>
+                                <td>Gramado</td>
+                                <td>5 dias</td>
+                                <td>R$ 1.799,00</td>
+                                <td>8</td>
+                                <td>
+                                    <span class="demo-status demo-status--active">
+                                        Disponível
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Férias em Família</td>
+                                <td>Porto Seguro</td>
+                                <td>6 dias</td>
+                                <td>R$ 2.200,00</td>
+                                <td>0</td>
+                                <td>
+                                    <span class="demo-status demo-status--pending">
+                                        Esgotado
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Exemplo 4: Rolagem horizontal -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>4. Tabela com rolagem horizontal</h2>
+                <p>
+                    A tabela possui mais colunas do que o espaço disponível.
+                    O container permite navegar horizontalmente sem
+                    comprometer o layout da página.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <h3 class="demo-table-title">
+                    Relatório detalhado de reservas
+                </h3>
+
+                <div class="table-container">
+
+                    <table class="table demo-table--wide">
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Cliente</th>
+                                <th scope="col">Destino</th>
+                                <th scope="col">Origem</th>
+                                <th scope="col">Partida</th>
+                                <th scope="col">Retorno</th>
+                                <th scope="col">Passageiros</th>
+                                <th scope="col">Valor</th>
+                                <th scope="col">Pagamento</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>#RES101</td>
+                                <td>Mariana Costa</td>
+                                <td>Rio de Janeiro</td>
+                                <td>São Paulo</td>
+                                <td>15/12/2026</td>
+                                <td>22/12/2026</td>
+                                <td>2</td>
+                                <td>R$ 2.450,00</td>
+                                <td>Cartão</td>
+                            </tr>
+
+                            <tr>
+                                <td>#RES102</td>
+                                <td>Pedro Almeida</td>
+                                <td>Florianópolis</td>
+                                <td>Curitiba</td>
+                                <td>20/12/2026</td>
+                                <td>27/12/2026</td>
+                                <td>3</td>
+                                <td>R$ 3.100,00</td>
+                                <td>PIX</td>
+                            </tr>
+
+                            <tr>
+                                <td>#RES103</td>
+                                <td>Camila Santos</td>
+                                <td>Salvador</td>
+                                <td>Belo Horizonte</td>
+                                <td>05/01/2027</td>
+                                <td>11/01/2027</td>
+                                <td>1</td>
+                                <td>R$ 1.890,00</td>
+                                <td>Cartão</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </section>
+
+        <div class="demo-note">
+            <strong>Observação:</strong>
+            a rolagem horizontal é responsabilidade do
+            <code>.table-container</code>, enquanto a apresentação
+            visual das linhas e colunas é responsabilidade do
+            <code>.table</code>.
+        </div>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,509 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração - Topbar</title>
+
+    <!-- CSS do componente -->
+    <link rel="stylesheet" href="../styles/Topbar.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background: #f1f5f9;
+            color: #1e293b;
+            font-family: Arial, sans-serif;
+        }
+
+        .demo-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .demo-title {
+            margin-bottom: 8px;
+            font-size: 28px;
+        }
+
+        .demo-description {
+            margin-bottom: 36px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .demo-section {
+            margin-bottom: 36px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+        .demo-section__info {
+            padding: 20px;
+        }
+
+        .demo-section__info h2 {
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+
+        .demo-section__info p {
+            margin: 0;
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .demo-preview {
+            border-top: 1px solid #e2e8f0;
+            background: #f8fafc;
+        }
+
+        /* Estilos exclusivos da demonstração */
+        .demo-content {
+            min-height: 180px;
+            padding: 28px 32px;
+        }
+
+        .demo-content h3 {
+            margin-top: 0;
+        }
+
+        .demo-content p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .demo-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 9px 14px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            background: #fff;
+            color: #334155;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .demo-button--primary {
+            border-color: #0d9488;
+            background: #0d9488;
+            color: #fff;
+        }
+
+        .demo-button--primary:hover {
+            background: #0f766e;
+        }
+
+        .demo-button:hover {
+            border-color: #94a3b8;
+        }
+
+        .demo-button--primary:hover {
+            border-color: #0f766e;
+        }
+
+        .demo-icon-button {
+            width: 36px;
+            height: 36px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            background: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .demo-user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .demo-user__avatar {
+            display: flex;
+            width: 34px;
+            height: 34px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #ccfbf1;
+            color: #0f766e;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .demo-user__name {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .demo-user__role {
+            display: block;
+            margin-top: 3px;
+            color: #64748b;
+            font-size: 11px;
+        }
+
+        .demo-topbar-layout {
+            min-height: 280px;
+            background: #f8fafc;
+        }
+
+        .demo-topbar-layout .topbar {
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .demo-topbar-layout .topbar__title {
+            margin: 0;
+        }
+
+        .demo-topbar-layout .topbar__actions {
+            align-items: center;
+        }
+
+        .demo-indicator--blue {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+
+        .demo-indicator--orange {
+            background: #ffedd5;
+            color: #c2410c;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 24px 12px;
+            }
+
+            .topbar {
+                padding: 16px;
+                flex-wrap: wrap;
+                gap: 14px;
+            }
+
+            .topbar__info {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .topbar__actions {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .demo-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="demo-container">
+
+        <h1 class="demo-title">Componente Topbar</h1>
+
+        <p class="demo-description">
+            Demonstração da barra superior da aplicação, responsável
+            por identificar a tela atual e disponibilizar ações
+            contextuais ao usuário.
+        </p>
+
+        <!-- Exemplo 1: Topbar padrão -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>1. Topbar padrão</h2>
+                <p>
+                    Exibe o título da página, um indicador de contexto
+                    e ações disponíveis no lado direito.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <header class="topbar">
+
+                    <div class="topbar__info">
+
+                        <h2 class="topbar__title">
+                            Dashboard
+                        </h2>
+
+                        <span class="topbar__indicator">
+                            Visão geral
+                        </span>
+
+                    </div>
+
+                    <div class="topbar__actions">
+
+                        <button class="demo-icon-button" type="button"
+                            aria-label="Notificações">
+                            ♧
+                        </button>
+
+                        <div class="demo-user">
+
+                            <div class="demo-user__avatar">
+                                AD
+                            </div>
+
+                            <div>
+                                <span class="demo-user__name">
+                                    Administrador
+                                </span>
+                                <span class="demo-user__role">
+                                    Administrador
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </header>
+
+                <div class="demo-content">
+                    <h3>Bem-vindo ao painel administrativo</h3>
+                    <p>
+                        Acompanhe reservas, gerencie destinos
+                        e visualize os principais indicadores
+                        da plataforma.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Exemplo 2: Topbar de gerenciamento -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>2. Topbar de gerenciamento de viagens</h2>
+                <p>
+                    Exemplo com ações contextuais para administrar
+                    os pacotes disponíveis na plataforma.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <header class="topbar">
+
+                    <div class="topbar__info">
+
+                        <h2 class="topbar__title">
+                            Viagens
+                        </h2>
+
+                        <span class="topbar__indicator demo-indicator--blue">
+                            24 pacotes
+                        </span>
+
+                    </div>
+
+                    <div class="topbar__actions">
+
+                        <button class="demo-button" type="button">
+                            ↓ Exportar
+                        </button>
+
+                        <button class="demo-button demo-button--primary" type="button">
+                            + Nova viagem
+                        </button>
+
+                    </div>
+
+                </header>
+
+                <div class="demo-content">
+                    <h3>Gerenciamento de pacotes</h3>
+                    <p>
+                        Cadastre, atualize e acompanhe os pacotes
+                        de viagem disponibilizados aos clientes.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Exemplo 3: Topbar de clientes -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>3. Topbar de clientes</h2>
+                <p>
+                    Exemplo de uma tela administrativa de usuários,
+                    com indicador de quantidade de registros.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <header class="topbar">
+
+                    <div class="topbar__info">
+
+                        <h2 class="topbar__title">
+                            Clientes
+                        </h2>
+
+                        <span class="topbar__indicator demo-indicator--orange">
+                            156 cadastrados
+                        </span>
+
+                    </div>
+
+                    <div class="topbar__actions">
+
+                        <button class="demo-button" type="button">
+                            ↓ Exportar relatório
+                        </button>
+
+                        <button class="demo-button demo-button--primary" type="button">
+                            + Novo cliente
+                        </button>
+
+                    </div>
+
+                </header>
+
+                <div class="demo-content">
+                    <h3>Gerenciamento de clientes</h3>
+                    <p>
+                        Consulte os usuários cadastrados, acompanhe
+                        suas informações e gerencie suas contas.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Exemplo 4: Topbar com ações reduzidas -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>4. Topbar com ações reduzidas</h2>
+                <p>
+                    Demonstra uma configuração mais simples,
+                    adequada para telas que possuem poucas ações.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <header class="topbar">
+
+                    <div class="topbar__info">
+
+                        <h2 class="topbar__title">
+                            Configurações
+                        </h2>
+
+                        <span class="topbar__indicator">
+                            Conta
+                        </span>
+
+                    </div>
+
+                    <div class="topbar__actions">
+
+                        <button class="demo-button" type="button">
+                            Cancelar
+                        </button>
+
+                        <button class="demo-button demo-button--primary" type="button">
+                            Salvar alterações
+                        </button>
+
+                    </div>
+
+                </header>
+
+                <div class="demo-content">
+                    <h3>Configurações da plataforma</h3>
+                    <p>
+                        Gerencie as preferências e informações
+                        gerais da aplicação.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Exemplo 5: Topbar responsiva -->
+        <section class="demo-section">
+
+            <div class="demo-section__info">
+                <h2>5. Topbar responsiva</h2>
+                <p>
+                    Simulação de uma barra superior em uma tela estreita,
+                    com quebra de linha dos elementos quando necessário.
+                </p>
+            </div>
+
+            <div class="demo-preview">
+
+                <div class="demo-topbar-layout">
+
+                    <header class="topbar">
+
+                        <div class="topbar__info">
+
+                            <h2 class="topbar__title">
+                                Reservas
+                            </h2>
+
+                            <span class="topbar__indicator">
+                                18 registros
+                            </span>
+
+                        </div>
+
+                        <div class="topbar__actions">
+
+                            <button class="demo-button" type="button">
+                                Filtrar
+                            </button>
+
+                            <button class="demo-button demo-button--primary" type="button">
+                                Exportar
+                            </button>
+
+                        </div>
+
+                    </header>
+
+                    <div class="demo-content">
+                        <h3>Reservas recentes</h3>
+                        <p>
+                            Consulte e acompanhe as reservas realizadas
+                            pelos clientes.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

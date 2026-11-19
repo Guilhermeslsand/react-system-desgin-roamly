@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração - Home Card e Hero</title>
+
+    <!-- CSS dos componentes -->
+    <link rel="stylesheet" href="../styles/Hero.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            font-family: Arial, sans-serif;
+        }
+
+        .demo-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .demo-title {
+            margin-bottom: 8px;
+            font-size: 28px;
+        }
+
+        .demo-description {
+            margin-bottom: 36px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .demo-section {
+            margin-bottom: 36px;
+        }
+
+        .demo-section__title {
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+
+        .demo-section__description {
+            margin-bottom: 16px;
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Estilos exclusivos da demonstração */
+        .demo-content {
+            padding: 32px;
+        }
+
+        .demo-content h3 {
+            margin-top: 0;
+        }
+
+        .demo-content p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .demo-destinations {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .demo-destination {
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+        .demo-destination__icon {
+            margin-bottom: 12px;
+            font-size: 28px;
+        }
+
+        .demo-destination h4 {
+            margin: 0 0 8px;
+        }
+
+        .demo-destination p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .demo-hero-spacing {
+            margin-top: 20px;
+        }
+
+        .demo-note {
+            padding: 16px;
+            border-left: 4px solid #0f766e;
+            border-radius: 4px;
+            background: #ecfdf5;
+            color: #065f46;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 24px 12px;
+            }
+
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero__title {
+                font-size: 1.8rem;
+            }
+
+            .demo-content {
+                padding: 20px;
+            }
+
+            .demo-destinations {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="demo-container">
+
+        <h1 class="demo-title">Home Card e Hero</h1>
+
+        <p class="demo-description">
+            Demonstração dos componentes utilizados para estruturar
+            e destacar o conteúdo principal da página inicial
+            de uma plataforma de viagens.
+        </p>
+
+        <!-- Exemplo 1: Home Card com Hero -->
+        <section class="demo-section">
+
+            <h2 class="demo-section__title">
+                1. Home Card com Hero
+            </h2>
+
+            <p class="demo-section__description">
+                Exemplo principal: o Home Card agrupa a seção Hero
+                e o conteúdo complementar da página inicial.
+            </p>
+
+            <div class="home-card">
+
+                <section class="hero">
+
+                    <span class="hero__badge">
+                        Sua próxima aventura começa aqui
+                    </span>
+
+                    <br><br>
+
+                    <span class="hero__tag">
+                        Plataforma de viagens
+                    </span>
+
+                    <h2 class="hero__title">
+                        Explore o mundo com a gente
+                    </h2>
+
+                    <p class="hero__subtitle">
+                        Encontre destinos incríveis e planeje sua
+                        próxima viagem com praticidade e segurança.
+                    </p>
+
+                </section>
+
+                <div class="demo-content">
+
+                    <h3>Comece a planejar sua viagem</h3>
+
+                    <p>
+                        Descubra novos lugares, compare opções
+                        e encontre o destino ideal para suas férias.
+                    </p>
+
+                    <div class="demo-destinations">
+
+                        <article class="demo-destination">
+                            <div class="demo-destination__icon">🏖️</div>
+                            <h4>Praias</h4>
+                            <p>
+                                Relaxe em destinos paradisíacos
+                                e aproveite o litoral.
+                            </p>
+                        </article>
+
+                        <article class="demo-destination">
+                            <div class="demo-destination__icon">🏔️</div>
+                            <h4>Montanhas</h4>
+                            <p>
+                                Explore paisagens naturais
+                                e experiências diferentes.
+                            </p>
+                        </article>
+
+                        <article class="demo-destination">
+                            <div class="demo-destination__icon">🏙️</div>
+                            <h4>Cidades</h4>
+                            <p>
+                                Conheça culturas, gastronomia
+                                e pontos turísticos.
+                            </p>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Exemplo 2: Hero isolado -->
+        <section class="demo-section">
+
+            <h2 class="demo-section__title">
+                2. Hero isolado
+            </h2>
+
+            <p class="demo-section__description">
+                O Hero também pode ser utilizado sem o Home Card,
+                caso a estrutura da página não precise de um container
+                com bordas arredondadas e sombra.
+            </p>
+
+            <section class="hero">
+
+                <span class="hero__tag">
+                    Descubra novos destinos
+                </span>
+
+                <h2 class="hero__title">
+                    Viajar nunca foi tão simples
+                </h2>
+
+                <p class="hero__subtitle">
+                    Planeje sua viagem, encontre ofertas
+                    e viva experiências inesquecíveis.
+                </p>
+
+            </section>
+
+        </section>
+
+        <!-- Exemplo 3: Variações de elementos do Hero -->
+        <section class="demo-section">
+
+            <h2 class="demo-section__title">
+                3. Elementos do Hero
+            </h2>
+
+            <p class="demo-section__description">
+                Demonstração individual dos elementos disponíveis
+                para compor diferentes mensagens de destaque.
+            </p>
+
+            <div class="home-card">
+
+                <section class="hero">
+
+                    <span class="hero__badge">
+                        Oferta especial
+                    </span>
+
+                    <h2 class="hero__title">
+                        Conheça o Brasil
+                    </h2>
+
+                    <p class="hero__text">
+                        De praias tropicais a cidades históricas,
+                        encontre o destino perfeito para sua próxima
+                        experiência.
+                    </p>
+
+                </section>
+
+            </div>
+
+        </section>
+
+        <!-- Exemplo 4: Hero com conteúdo complementar -->
+        <section class="demo-section">
+
+            <h2 class="demo-section__title">
+                4. Hero com conteúdo complementar
+            </h2>
+
+            <p class="demo-section__description">
+                Exemplo de composição com título, badge, tag,
+                subtítulo e texto descritivo.
+            </p>
+
+            <div class="home-card">
+
+                <section class="hero">
+
+                    <span class="hero__tag">
+                        Planeje sua viagem
+                    </span>
+
+                    <br><br>
+
+                    <span class="hero__badge">
+                        Mais destinos, mais experiências
+                    </span>
+
+                    <h2 class="hero__title">
+                        O mundo espera por você
+                    </h2>
+
+                    <p class="hero__subtitle">
+                        Escolha seu próximo destino e comece
+                        a organizar sua viagem.
+                    </p>
+
+                    <p class="hero__text demo-hero-spacing">
+                        Consulte pacotes, encontre oportunidades
+                        e transforme seus planos em experiências reais.
+                    </p>
+
+                </section>
+
+            </div>
+
+        </section>
+
+        <div class="demo-note">
+            <strong>Observação:</strong>
+            os elementos do Hero são opcionais. Utilize somente
+            aqueles que fizerem sentido para a mensagem da seção.
+        </div>
+
+    </main>
+
+</body>
+</html>

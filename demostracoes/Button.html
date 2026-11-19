@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração de Buttons BEM</title>
+
+    <!-- CSS do componente -->
+    <link rel="stylesheet" href="../styles/Button.css">
+
+    <!-- Estilos exclusivos da página de demonstração -->
+    <style>
+        :root {
+            --color-primary: #2563eb;
+            --color-primary-dark: #1d4ed8;
+            --color-border: #e2e8f0;
+            --color-text-main: #1e293b;
+            --radius-sm: 6px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .demo-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .demo-title {
+            margin-bottom: 8px;
+            font-size: 28px;
+        }
+
+        .demo-description {
+            margin-bottom: 36px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .demo-section {
+            margin-bottom: 32px;
+            padding: 24px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+        }
+
+        .demo-section h2 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .demo-section p {
+            margin-bottom: 20px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .demo-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .demo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .demo-label {
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        .demo-full-container {
+            max-width: 400px;
+        }
+
+        .demo-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 400px;
+        }
+
+        .demo-form input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            .demo-section {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="demo-container">
+
+        <h1 class="demo-title">Demonstração de Buttons</h1>
+
+        <p class="demo-description">
+            Exemplos de utilização dos botões reutilizáveis da aplicação,
+            demonstrando suas variações visuais, estados de interação
+            e aplicação em diferentes contextos.
+        </p>
+
+        <!-- Seção 1: Botão padrão -->
+        <section class="demo-section">
+            <h2>1. Botão padrão</h2>
+
+            <p>
+                Estrutura base do componente, sem aplicação de modificadores.
+            </p>
+
+            <div class="demo-group">
+                <div class="demo-item">
+                    <span class="demo-label">Botão padrão</span>
+                    <button class="button" type="button">
+                        Botão padrão
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Botão primário -->
+        <section class="demo-section">
+            <h2>2. Botão primary</h2>
+
+            <p>
+                Utilizado para ações principais que precisam de maior destaque.
+            </p>
+
+            <div class="demo-group">
+                <div class="demo-item">
+                    <span class="demo-label">Ação principal</span>
+                    <button class="button button--primary" type="button">
+                        Continuar
+                    </button>
+                </div>
+
+                <div class="demo-item">
+                    <span class="demo-label">Salvar informações</span>
+                    <button class="button button--primary" type="button">
+                        Salvar
+                    </button>
+                </div>
+
+                <div class="demo-item">
+                    <span class="demo-label">Confirmar operação</span>
+                    <button class="button button--primary" type="button">
+                        Confirmar
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Botão outline -->
+        <section class="demo-section">
+            <h2>3. Botão outline</h2>
+
+            <p>
+                Utilizado para ações secundárias, com fundo claro e borda.
+            </p>
+
+            <div class="demo-group">
+                <div class="demo-item">
+                    <span class="demo-label">Ação secundária</span>
+                    <button class="button button--outline" type="button">
+                        Cancelar
+                    </button>
+                </div>
+
+                <div class="demo-item">
+                    <span class="demo-label">Navegação</span>
+                    <button class="button button--outline" type="button">
+                        Voltar
+                    </button>
+                </div>
+
+                <div class="demo-item">
+                    <span class="demo-label">Visualizar informações</span>
+                    <button class="button button--outline" type="button">
+                        Ver detalhes
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 4: Botão full -->
+        <section class="demo-section">
+            <h2>4. Botão full</h2>
+
+            <p>
+                Faz o botão ocupar toda a largura disponível do elemento pai.
+            </p>
+
+            <div class="demo-full-container">
+                <div class="demo-item">
+                    <span class="demo-label">Botão primário em largura total</span>
+                    <button
+                        class="button button--primary button--full"
+                        type="button"
+                    >
+                        Continuar
+                    </button>
+                </div>
+
+                <br>
+
+                <div class="demo-item">
+                    <span class="demo-label">Botão outline em largura total</span>
+                    <button
+                        class="button button--outline button--full"
+                        type="button"
+                    >
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 5: Combinação de modificadores -->
+        <section class="demo-section">
+            <h2>5. Combinação de modificadores</h2>
+
+            <p>
+                Os modificadores podem ser combinados para aplicar
+                características diferentes ao mesmo botão.
+            </p>
+
+            <div class="demo-group">
+                <div class="demo-item">
+                    <span class="demo-label">Primary + Full</span>
+                    <div class="demo-full-container">
+                        <button
+                            class="button button--primary button--full"
+                            type="button"
+                        >
+                            Finalizar reserva
+                        </button>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <span class="demo-label">Outline + Full</span>
+                    <div class="demo-full-container">
+                        <button
+                            class="button button--outline button--full"
+                            type="button"
+                        >
+                            Voltar para destinos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 6: Botões em formulário -->
+        <section class="demo-section">
+            <h2>6. Botões em formulário</h2>
+
+            <p>
+                Exemplo de aplicação dos botões em um formulário de busca
+                de viagens.
+            </p>
+
+            <form class="demo-form" action="#" method="get">
+                <input
+                    type="text"
+                    name="destination"
+                    placeholder="Digite seu destino"
+                >
+
+                <button
+                    class="button button--primary button--full"
+                    type="submit"
+                >
+                    Buscar destinos
+                </button>
+
+                <button
+                    class="button button--outline button--full"
+                    type="reset"
+                >
+                    Limpar pesquisa
+                </button>
+            </form>
+        </section>
+
+    </main>
+</body>
+</html>

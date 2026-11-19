@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração de Button Nav BEM</title>
+
+    <!-- CSS do componente -->
+    <link rel="stylesheet" href="../styles/ButtonNav.css">
+
+    <!-- Estilos exclusivos da página de demonstração -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .demo-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .demo-title {
+            margin-bottom: 8px;
+            font-size: 28px;
+        }
+
+        .demo-description {
+            margin-bottom: 36px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .demo-section {
+            margin-bottom: 32px;
+            padding: 24px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+        }
+
+        .demo-section h2 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .demo-section p {
+            margin-bottom: 20px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .demo-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .demo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .demo-label {
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        .demo-pagination {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .demo-page-number {
+            padding: 6px 10px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .demo-step {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 500px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .demo-step-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .demo-step h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .demo-step p {
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            .demo-section {
+                padding: 18px;
+            }
+
+            .demo-step-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="demo-container">
+
+        <h1 class="demo-title">Demonstração de Button Nav</h1>
+
+        <p class="demo-description">
+            Exemplos de utilização dos botões de navegação da aplicação,
+            demonstrando ações de avançar, voltar, paginação e navegação
+            entre etapas.
+        </p>
+
+        <!-- Seção 1: Botão de navegação padrão -->
+        <section class="demo-section">
+            <h2>1. Button Nav padrão</h2>
+
+            <p>
+                Estilo base utilizado para ações secundárias de navegação.
+            </p>
+
+            <div class="demo-group">
+                <div class="demo-item">
+                    <span class="demo-label">Voltar</span>
+                    <button class="button-nav" type="button">
+                        ← Anterior
+                    </button>
+                </div>
+
+                <div class="demo-item">
+                    <span class="demo-label">Cancelar</span>
+                    <button class="button-nav" type="button">
+                        Cancelar
+                    </button>
+                </div>
+
+                <div class="demo-item">
+                    <span class="demo-label">Retornar</span>
+                    <button class="button-nav" type="button">
+                        Voltar
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Button Nav primary -->
+        <section class="demo-section">
+            <h2>2. Button Nav primary</h2>
+
+            <p>
+                Variação de destaque utilizada para ações principais
+                de navegação.
+            </p>
+
+            <div class="demo-group">
+                <div class="demo-item">
+                    <span class="demo-label">Avançar</span>
+                    <button
+                        class="button-nav button-nav--primary"
+                        type="button"
+                    >
+                        Próxima →
+                    </button>
+                </div>
+
+                <div class="demo-item">
+                    <span class="demo-label">Continuar</span>
+                    <button
+                        class="button-nav button-nav--primary"
+                        type="button"
+                    >
+                        Continuar
+                    </button>
+                </div>
+
+                <div class="demo-item">
+                    <span class="demo-label">Concluir</span>
+                    <button
+                        class="button-nav button-nav--primary"
+                        type="button"
+                    >
+                        Finalizar
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Botões de paginação -->
+        <section class="demo-section">
+            <h2>3. Navegação por paginação</h2>
+
+            <p>
+                Exemplo de utilização dos botões para navegar entre
+                páginas de resultados.
+            </p>
+
+            <div class="demo-pagination">
+                <button class="button-nav" type="button">
+                    ← Anterior
+                </button>
+
+                <span class="demo-page-number">
+                    Página 2 de 5
+                </span>
+
+                <button
+                    class="button-nav button-nav--primary"
+                    type="button"
+                >
+                    Próxima →
+                </button>
+            </div>
+        </section>
+
+        <!-- Seção 4: Navegação entre etapas -->
+        <section class="demo-section">
+            <h2>4. Navegação entre etapas</h2>
+
+            <p>
+                Exemplo de aplicação em um fluxo de cadastro ou reserva
+                de viagem.
+            </p>
+
+            <div class="demo-step">
+                <div>
+                    <h3>Etapa 2: Dados da viagem</h3>
+                    <p>
+                        Informe os dados necessários para continuar
+                        com sua reserva.
+                    </p>
+                </div>
+
+                <div class="demo-step-actions">
+                    <button class="button-nav" type="button">
+                        ← Voltar
+                    </button>
+
+                    <button
+                        class="button-nav button-nav--primary"
+                        type="button"
+                    >
+                        Próxima etapa →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 5: Navegação em resultados -->
+        <section class="demo-section">
+            <h2>5. Navegação em resultados</h2>
+
+            <p>
+                Exemplo de navegação após uma pesquisa de destinos.
+            </p>
+
+            <div class="demo-group">
+                <button class="button-nav" type="button">
+                    ← Resultados anteriores
+                </button>
+
+                <button
+                    class="button-nav button-nav--primary"
+                    type="button"
+                >
+                    Mais destinos →
+                </button>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

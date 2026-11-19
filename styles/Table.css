@@ -1,0 +1,56 @@
+/* =========================================================
+   BLOCK: TABLE CONTAINER
+   Container responsável por envolver a tabela e controlar
+   a rolagem horizontal quando seu conteúdo ultrapassa
+   a largura disponível.
+   ========================================================= */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+
+/* =========================================================
+   BLOCK: TABLE
+   Estrutura padrão de tabela utilizada para apresentar
+   dados organizados em linhas e colunas.
+   ========================================================= */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+
+/* =========================================================
+   ELEMENT: TABLE CELLS
+   Estilização compartilhada das células de cabeçalho (th)
+   e das células de dados (td), definindo espaçamento,
+   alinhamento e separação entre linhas.
+   ========================================================= */
+
+.table th,
+.table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   ELEMENT: TABLE HEADER
+   Células de cabeçalho responsáveis por identificar
+   o conteúdo de cada coluna da tabela.
+   ========================================================= */
+
+.table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+}

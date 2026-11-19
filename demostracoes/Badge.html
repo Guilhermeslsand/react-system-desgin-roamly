@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração de Badges BEM</title>
+
+    <!-- CSS do componente -->
+    <link rel="stylesheet" href="../styles/Badge.css">
+
+    <!-- Estilos exclusivos da página de demonstração -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .demo-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .demo-title {
+            margin-bottom: 8px;
+            font-size: 28px;
+        }
+
+        .demo-description {
+            margin-bottom: 36px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .demo-section {
+            margin-bottom: 32px;
+            padding: 24px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+        }
+
+        .demo-section h2 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .demo-section p {
+            margin-bottom: 20px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .demo-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .demo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .demo-label {
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        .demo-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .demo-card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .demo-card-content strong {
+            font-size: 14px;
+        }
+
+        .demo-card-content span {
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            .demo-card {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="demo-container">
+
+        <h1 class="demo-title">Demonstração de Badges</h1>
+
+        <p class="demo-description">
+            Exemplos de utilização dos pequenos emblemas e etiquetas
+            utilizados para indicar estados, compatibilidade e confirmações
+            nas telas da aplicação.
+        </p>
+
+        <!-- Seção 1: Badge padrão -->
+        <section class="demo-section">
+            <h2>1. Badge padrão</h2>
+
+            <p>
+                Estilo base utilizado para exibir pequenas etiquetas
+                informativas.
+            </p>
+
+            <div class="demo-group">
+                <div class="demo-item">
+                    <span class="demo-label">Etiqueta informativa</span>
+                    <span class="badge">Informação</span>
+                </div>
+
+                <div class="demo-item">
+                    <span class="demo-label">Categoria</span>
+                    <span class="badge">Internacional</span>
+                </div>
+
+                <div class="demo-item">
+                    <span class="demo-label">Status</span>
+                    <span class="badge">Disponível</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Badge de sucesso -->
+        <section class="demo-section">
+            <h2>2. Badge de sucesso</h2>
+
+            <p>
+                Variação utilizada para indicar confirmações, compatibilidade
+                ou operações concluídas.
+            </p>
+
+            <div class="demo-group">
+                <div class="demo-item">
+                    <span class="demo-label">Compatibilidade</span>
+                    <span class="badge badge-success">
+                        Compatível
+                    </span>
+                </div>
+
+                <div class="demo-item">
+                    <span class="demo-label">Item adicionado</span>
+                    <span class="badge badge-success">
+                        Adicionado
+                    </span>
+                </div>
+
+                <div class="demo-item">
+                    <span class="demo-label">Operação concluída</span>
+                    <span class="badge badge-success">
+                        Concluído
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Badge em contexto de aplicação -->
+        <section class="demo-section">
+            <h2>3. Badges em contexto</h2>
+
+            <p>
+                Exemplos de como as etiquetas podem aparecer junto
+                às informações de uma viagem.
+            </p>
+
+            <div class="demo-group">
+                <div class="demo-card">
+                    <div class="demo-card-content">
+                        <strong>Pacote para Rio de Janeiro</strong>
+                        <span>5 dias · Hotel e passagem inclusos</span>
+                    </div>
+
+                    <span class="badge badge-success">
+                        Disponível
+                    </span>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-card-content">
+                        <strong>Pacote para Buenos Aires</strong>
+                        <span>7 dias · Hotel incluso</span>
+                    </div>
+
+                    <span class="badge">
+                        Internacional
+                    </span>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-card-content">
+                        <strong>Reserva de hotel</strong>
+                        <span>Reserva confirmada</span>
+                    </div>
+
+                    <span class="badge badge-success">
+                        Confirmado
+                    </span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
